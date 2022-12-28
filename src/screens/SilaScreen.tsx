@@ -15,6 +15,7 @@ import Card from '../components/SilaComponents/Card';
 
 // import Card from '../../components/SilaComponents/Card';
 import {setDATA, setOne} from '../Redux/counter/CounterSlice';
+// add user
 function AddUser({name, email, setname, setemail}: any) {
   const [modalVisible, setModalVisible] = React.useState(false);
 
@@ -81,7 +82,7 @@ function AddUser({name, email, setname, setemail}: any) {
     </>
   );
 }
-
+//update user
 const Update = ({
   modalVisible,
   setModalVisible,
@@ -155,20 +156,11 @@ const Update = ({
     </>
   );
 };
+
 const SilaScreen = () => {
   const {GetOne}: any = useSelector((state: any) => state.counter);
   const [name, setname] = React.useState('');
   const [email, setemail] = React.useState('');
-  console.log('____________');
-  console.log(GetOne);
-
-  // const DF = {
-  //   name,
-  //   setname,
-  //   email,
-  //   setemail,
-  // };
-  // declare varaible
   const datas: any = useSelector((state: any) => state.counter.DATA);
 
   const displact = useDispatch();

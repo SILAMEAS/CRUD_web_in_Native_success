@@ -28,9 +28,6 @@ const Card = (obj: Obj) => {
       displact(setDATA(newData));
     }
   };
-  // const HandleDetail = (c: any) => {
-  //   console.log(c);
-  // };
   return (
     <NativeBaseProvider>
       <Box
@@ -45,24 +42,7 @@ const Card = (obj: Obj) => {
         key={obj.id}
       >
         <HStack justifyContent="space-between">
-          <Box justifyContent="space-between">
-            <VStack space="2">
-              <Text fontSize="xl" color="white">
-                {obj.email}
-              </Text>
-              <Text
-                color="white"
-                fontSize="sm"
-                bg={'red.500'}
-                rounded="lg"
-                textAlign="center"
-                onPress={HandleDelete}
-                width="5rem"
-                py={1}
-              >
-                Delete
-              </Text>
-            </VStack>
+          <VStack space="2" justifyContent={'center'}>
             <Pressable
               rounded="xs"
               bg="primary.400"
@@ -76,20 +56,37 @@ const Card = (obj: Obj) => {
                 fontWeight="bold"
                 color="white"
               >
-                {obj.name}
+                Name : {obj.name}
               </Text>
-              <Text>{obj.id}</Text>
             </Pressable>
-          </Box>
-          <Image
-            source={{
-              uri: 'https://media.vanityfair.com/photos/5ba12e6d42b9d16f4545aa19/3:2/w_1998,h_1332,c_limit/t-Avatar-The-Last-Airbender-Live-Action.jpg',
-            }}
-            alt="Aang flying and surrounded by clouds"
-            height="100"
-            rounded="full"
-            width="100"
-          />
+            <Text fontSize="xl" color="white">
+              Email : {obj.email}
+            </Text>
+          </VStack>
+
+          <VStack justifyContent={'center'} space="2">
+            <Image
+              source={{
+                uri: 'https://media.vanityfair.com/photos/5ba12e6d42b9d16f4545aa19/3:2/w_1998,h_1332,c_limit/t-Avatar-The-Last-Airbender-Live-Action.jpg',
+              }}
+              alt="Aang flying and surrounded by clouds"
+              height="100"
+              rounded="full"
+              width="100"
+            />
+            <Text
+              color="white"
+              fontSize="sm"
+              bg={'red.500'}
+              rounded="lg"
+              textAlign="center"
+              onPress={HandleDelete}
+              width="5rem"
+              py={1}
+            >
+              Delete
+            </Text>
+          </VStack>
         </HStack>
       </Box>
     </NativeBaseProvider>
